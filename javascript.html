@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>Web Portfolio: Javascript</title>
+        <link type="text/css" rel="stylesheet" href="_assets/css/mystyle.css" media="screen">
+        <link rel="shortcut icon" href="_assets/images/favicon.png">
+        <script>
+            function showAlert() { 
+            var myText = "This can be whatever text you like!";
+            alert ("Hello world!");
+            }
+            function updateTime() { 
+
+            // get all parts of the current time
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            // add leading zero's to minutes and seconds
+            if (minutes < 10) { 
+            minutes = '0' + minutes;
+            }
+            if (seconds < 10) { 
+            seconds = '0' + seconds;
+            }       
+
+            // get time of day (am or pm) 
+            if (hours >= 12 && hours < 24) { 
+            var timeOfDay = 'pm';
+            }
+            else { 
+            var timeOfDay = 'am'; 
+            }
+                
+            // convert hours from 24-hour time to 12-hour time
+            if (hours > 12) { 
+            hours = hours - 12;
+            }
+
+            // join them together into a character string named "currentTime"
+            var currentTime = hours + ':' + minutes + ':' + seconds + '  ' + timeOfDay;
+
+            hours = 24;
+            minutes = 7;
+            seconds = 3;   
+            
+            // get the clock div 
+            var myClock = document.getElementById('clock');
+            
+            // write the currentTime string to the clock div
+            myClock.innerHTML = currentTime;
+            }
+
+            function toggleClock() { 
+            // get the clock 
+            var myClock = document.getElementById('clock');
+
+            // get the current value of the clock's display property 
+            var displaySetting = myClock.style.display;
+
+            // also get the clock button, so we can change what it says 
+            var clockButton = document.getElementById('clockButton');
+                
+            // now toggle the clock and the button text, depending on current state
+            if (displaySetting == 'block') { 
+              // clock is visible. hide it
+              myClock.style.display = 'none';
+              // change button text
+              clockButton.innerHTML = 'Show clock';
+            }
+            else { 
+              // clock is hidden. show it 
+              myClock.style.display = 'block';
+              // change button text
+              clockButton.innerHTML = 'Hide clock';
+              }
+              }  
+          </script>
+    </head>
+    <body onload="setInterval('updateTime()',1000)">
+        <button onclick="showAlert()">
+            Show Alert</button>
+        <button onclick="toggleClock()" id="clockButton">Show clock</button>
+        <div id="clock">
+        </div>
+        <div class="banner">
+            <center>
+            <img src="_assets/images/banner.png" alt="banner"/>
+            </center>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="accessibility.html">Accessibility</a>
+                </li>
+                <li>
+                    <a href="usability.html">Usability</a>
+                </li>
+                <li>
+                    <a href="graphics.html">Graphics</a>
+                </li>
+                <li>
+                    <a href="javascript.html">Javascript</a>
+                </li>
+                <li>
+                    <a href="tools.html">Tools</a>
+                </li>
+                <li>
+                    <a href="video.html">Video</a>
+                </li>
+            </ul>
+        </nav> 
+        <br></br> 
+        <div class="first name">
+            <label for="txt-name">First Name</label><br>
+                        
+            <textarea name="txt-name" id="txt-name" rows="1" placeholder=""></textarea>
+        </div>
+        <div class="last name">
+            <label for="txt-name">Last Name</label><br>
+                        
+            <textarea name="txt-name" id="txt-name" rows="1" placeholder=""></textarea>
+        </div>
+        <div class="size"
+            <label for="s-size">Size</label>
+            <br></br>
+
+            <select id="s-size">
+                <option value="">- Select -</option>
+                <option value="XS">X Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+                <option value="XL">X Large</option>
+            </select>
+        </div>
+        <div class="groupsmethod">
+            <label for="r-method-pickup">Shipping and Handling</label>
+            <br></br>
+
+            <input type="radio" value="pickup" name="r_method" id="r-method-pickup" checked> 
+            <label for="r-method-pickup">Standard $5 (3-6 business days)</label>
+            <br></br>
+
+            <input type="radio" value="ups" name="r_method" id="r-method-ups" checked> 
+            <label for="r-method-ups">Express $10 (2-4 business days)</label>
+            <br></br>
+
+            <input type="radio" value="usps" name="r_method" id="r-method-usps" checked> 
+            <label for="r-method-usps">Overnight (1 business day)</label>
+            <br></br>
+        </div>  
+         <div class="foundout">
+            <label for="foundout">Where did you hear about us?</label>
+              <br>
+            <input type="checkbox" value="YES" name="foundout" id="foundout"> 
+            <label for="foundout">Social Media</label>
+              <br>
+            <input type="checkbox" value="YES" name="foundout" id="foundout"> 
+            <label for="foundout">Friends, family, etc.</label>
+              <br>
+            <input type="checkbox" value="YES" name="foundout" id="foundout"> 
+            <label for="foundout">Other</label>
+        </div>
+        <div class="other">
+            <label for="txt-name">If other, explain</label><br>
+                        
+            <textarea name="txt-other" id="txt-other" rows="1" placeholder="Other"></textarea>
+        </div>
+        <form>
+            <input type="submit"
+        </form>
+       
+
+
+
+
+   
+
+
+    </body>
+</html>
